@@ -1,0 +1,611 @@
+:root {
+    --color-primary: #F2994A;
+    --color-light-grey: #C4C4C4;
+    --color-dark-grey: #4F4F4F;
+    --color-dark: #333333;
+
+    --ff-primary: 'Montserrat', sans-serif;
+    --ff-secondary: 'Playfair Display', serif;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+    position: relative;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    max-width: 70.5rem;
+    margin-inline: auto;
+    font-family: var(--ff-primary);
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+}
+
+input[type="checkbox"]+label {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+}
+
+input[type="checkbox"]+label:before {
+    content: '';
+    margin-right: 10px;
+    border: 1px solid #828282;
+    border-radius: 4px;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 20px;
+    height: 20px;
+    background: white;
+}
+
+input[type="checkbox"]:hover+label:before {
+    background: #3a3333;
+}
+
+input[type="checkbox"]:checked+label:before {
+    background: #3a3333;
+}
+
+input[type="checkbox"]:checked+label:after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 9px;
+    background: white;
+    width: 2px;
+    height: 2px;
+    box-shadow:
+        2px 0 0 white,
+        4px 0 0 white,
+        4px -2px 0 white,
+        4px -4px 0 white,
+        4px -6px 0 white,
+        4px -8px 0 white;
+    transform: rotate(45deg);
+}
+
+/* custom properties */
+
+.mt-3 {
+    margin-top: 3rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.mb-5 {
+    margin-bottom: 5rem;
+}
+
+.mb-7 {
+    margin-bottom: 7rem;
+}
+
+.mb-10 {
+    margin-bottom: 10rem;
+}
+
+/* styles */
+
+header {
+    margin-top: 1rem;
+    width: 600px;
+}
+
+header h1 {
+    font-family: var(--ff-secondary);
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+header small {
+    line-height: 0;
+    color: var(--color-light-grey);
+}
+
+header div {
+    display: flex;
+    gap: 0.8rem;
+    font-weight: 500;
+    color: var(--color-dark-grey);
+    font-style: italic;
+    font-size: 15px;
+    line-height: 17px;
+
+}
+
+main>img {
+    border-radius: 12px;
+    margin: 3rem 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .left-content {
+    flex-basis: 80%;
+}
+
+.instructions-container p {
+    flex-basis: 70%;
+}
+
+.left-content h2 {
+    font-family: var(--ff-secondary);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--color-dark);
+    font-size: 24px;
+}
+
+.left-content span {
+    font-family: var(--ff-secondary);
+    color: var(--color-dark);
+    font-size: 18px;
+    font-style: italic;
+}
+
+.input {
+    margin-top: 1rem;
+}
+
+label {
+    color: var(--color-dark);
+    font-size: 16px;
+    line-height: 25px;
+}
+
+.input:nth-of-type(3) {
+    margin-bottom: 1.5rem;
+}
+
+.input+p::first-letter {
+    font-size: 40px;
+}
+
+.input+p {
+    font-weight: 500;
+    font-size: 16px;
+    font-style: italic;
+    margin: 1.5rem 0 1.5rem 0;
+}
+
+.instructions-container {
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.square {
+    font-family: var(--ff-secondary);
+    font-weight: 700;
+    font-size: 24px;
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    background-color: var(--color-primary);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+
+.square:not(.square-6) {
+    padding-bottom: 0.4rem;
+}
+
+.square-6 {
+    padding-bottom: 0.2rem;
+}
+
+.card {
+    border-radius: 12px;
+    width: 230px;
+    height: 400px;
+    box-shadow: 0 0 20px #0000001A;
+    display: grid;
+    align-items: center;
+    flex-basis: 20%;
+}
+
+.card img {
+    width: 40px;
+    height: 40px;
+}
+
+.yields-container,
+.prep-container,
+.cook-container,
+.total-container {
+    display: flex;
+    justify-content: center;
+}
+
+.yields-container div {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.7rem;
+    align-items: flex-start;
+    color: var(--color-primary);
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.yields-container div span,
+.prep-container div span,
+.cook-container div span,
+.total-container div span {
+    color: #bdbdbd;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.prep-container div,
+.cook-container div,
+.total-container div {
+    display: flex;
+    flex-direction: column;
+    margin-top: -0.2rem;
+    margin-left: 0.7rem;
+    align-items: flex-start;
+    color: var(--color-dark);
+    font-weight: 500;
+    font-size: 16px;
+}
+
+svg {
+    color: var(--color-dark-grey);
+}
+
+@media (max-width: 1160px) {
+    body {
+        width: min(90%, 55rem)
+    }
+
+    .mb-2,
+    .mb-5,
+    .mb-7,
+    .mb-10 {
+        margin-bottom: 0;
+    }
+
+    .container .left-content {
+        flex-basis: 75%;
+    }
+
+    .card {
+        flex-basis: 25%;
+    }
+}
+
+@media (max-width: 900px) {
+    .container .left-content {
+        max-width: 500px;
+    }
+
+    .container .left-content {
+        flex-basis: 70%;
+    }
+
+    .card {
+        flex-basis: 30%;
+    }
+}
+
+@media (max-width: 750px) {
+    .mt-3 {
+        margin-top: 0;
+    }
+
+    .container .left-content {
+        max-width: 500px;
+    }
+
+    .container {
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .card {
+        order: -1;
+        width: auto;
+        margin: 2rem 0;
+        height: 100px;
+        display: grid;
+        box-shadow: none;
+        grid-template-areas:
+            'one one one'
+            'two three four';
+    }
+
+    .yields-container {
+        grid-area: one;
+        justify-content: start;
+        margin-bottom: 1.5rem;
+    }
+
+    .prep-container {
+        grid-area: two;
+    }
+
+    .cook-container {
+        grid-area: three;
+    }
+
+    .total-container {
+        grid-area: four;
+    }
+
+    .yields-container,
+    .prep-container,
+    .cook-container,
+    .total-container {
+        justify-content: start;
+    }
+}
+
+@media (max-width: 660px) {
+    header {
+        width: auto;
+    }
+
+    main>img {
+        margin: 1rem 0;
+    }
+
+    .container .left-content {
+        max-width: 500px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header div {
+        font-size: 13px;
+    }
+
+    .card {
+        margin: 1.5rem 0;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .yields-container div,
+    .prep-container div,
+    .cook-container div,
+    .total-container div {
+        font-size: 13px;
+        margin-left: 0.6rem;
+    }
+
+    .yields-container div span,
+    .prep-container div span,
+    .cook-container div span,
+    .total-container div span {
+        color: #BDBDBD;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    .card img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+
+
+
+@media (max-width: 368px) {
+
+    header h1 {
+        position: relative;
+        font-size: 24px;
+        top: -5px;
+    }
+
+    header {
+        width: auto;
+    }
+
+    header p {
+        font-size: 13px;
+    }
+
+    .container {
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .card {
+        margin: 0;
+        order: -1;
+        width: auto;
+        height: 100px;
+        display: grid;
+        box-shadow: none;
+        grid-template-areas:
+            'one one one'
+            'two three four';
+    }
+
+    .yields-container {
+        grid-area: one;
+        justify-content: start;
+        margin: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .prep-container {
+        grid-area: two;
+    }
+
+    .cook-container {
+        grid-area: three;
+    }
+
+    .total-container {
+        grid-area: four;
+    }
+
+    .yields-container div,
+    .prep-container div,
+    .cook-container div,
+    .total-container div {
+        font-size: 11px;
+        margin-left: 0.6rem;
+    }
+
+    .yields-container div span,
+    .prep-container div span,
+    .cook-container div span,
+    .total-container div span {
+        color: #BDBDBD;
+        font-size: 9px;
+        font-weight: 700;
+    }
+
+    svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .card img {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media (max-width: 320px) {
+    .yields-container {
+        margin: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .yields-container div,
+    .prep-container div,
+    .cook-container div,
+    .total-container div {
+        font-size: 12px;
+        margin-left: 0.6rem;
+    }
+
+    .yields-container div span,
+    .prep-container div span,
+    .cook-container div span,
+    .total-container div span {
+        font-size: 11px;
+    }
+
+    .card {
+        margin: 0;
+        order: -1;
+        width: auto;
+        height: 300px;
+        display: grid;
+        justify-content: space-around;
+        grid-template-areas: 'one two'
+            'three four';
+
+    }
+
+    .card img {
+        width: 32px;
+        height: 32px;
+    }
+
+    svg {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+footer {
+    color: #828282;
+    text-align: center;
+}
